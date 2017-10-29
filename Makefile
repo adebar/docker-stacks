@@ -6,7 +6,7 @@
 # Use bash for inline if-statements in test target
 SHELL:=bash
 
-OWNER:=jupyter
+OWNER:=markusschanta
 # need to list these manually because there's a dependency tree
 ARCH:=$(shell uname -m)
 
@@ -31,7 +31,7 @@ RETRIES:=10
 
 help:
 # http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
-	@echo "jupyter/docker-stacks"
+	@echo "adebar/docker-stacks"
 	@echo "====================="
 	@echo "Replace % with a stack directory name (e.g., make build/minimal-notebook)"
 	@echo
@@ -54,7 +54,7 @@ build/%: ## build the latest image for a stack
 build-all: $(foreach I,$(ALL_IMAGES),arch_patch/$(I) build/$(I) ) ## build all stacks
 build-test-all: $(foreach I,$(ALL_IMAGES),arch_patch/$(I) build/$(I) test/$(I) ) ## build and test all stacks
 
-dev/%: ARGS?=
+dev/%: ARGS?=start.sh jupyter lab
 dev/%: DARGS?=
 dev/%: PORT?=8888
 dev/%: ## run a foreground container for a stack
