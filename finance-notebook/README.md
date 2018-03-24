@@ -16,7 +16,7 @@
 The following command starts a container with the Notebook server listening for HTTP connections on port 8888 with a randomly generated authentication token configured.
 
 ```
-docker run -it --rm -p 8888:8888 markusschanta/finance-notebook
+$ docker run -it --rm -p 8888:8888 markusschanta/finance-notebook
 ```
 
 Take note of the authentication token included in the notebook startup log messages. Include it in the URL you visit to access the Notebook server or enter it in the Notebook login form.
@@ -24,3 +24,18 @@ Take note of the authentication token included in the notebook startup log messa
 ## Notebook Options
 
 See the [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) documentation for further supported options. This image should support all the features of the jupyter/docker-stacks images.
+
+## Development Workflow
+
+1. Run an interactive foreground container for a stack and test your changes:
+```
+$ make bash/finance-notebook
+```
+2. Build the container:
+```
+$ make build/finance-notebook
+```
+3. Push the container:
+```
+$ make push/finance-notebook
+```
