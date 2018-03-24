@@ -47,6 +47,10 @@ arch_patch/%: ## apply hardware architecture specific patches to the Dockerfile
 		patch -f ./$(notdir $@)/Dockerfile ./$(notdir $@)/Dockerfile.$(ARCH).patch; \
 	fi
 
+bash/%: PORT?=8888
+bash/%: ## run a foreground container for a stack
+	docker run -it --rm -p $(PORT):8888 $(DARGS) $(OWNER)/$(notdir $@) bash
+
 build/%: DARGS?=
 build/%: ## build the latest image for a stack
 	docker build $(DARGS) --rm --force-rm -t $(OWNER)/$(notdir $@):latest ./$(notdir $@)
