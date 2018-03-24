@@ -6,6 +6,7 @@
 
 * Fully-functional Jupyter Notebook (incl. JupyterLab)
 * Preinstalled financial computing packages
+  * altair
   * quandl
   * vega_datasets
 * Preinstalled [markusschanta/dotfiles](https://github.com/markusschanta/dotfiles)

@@ -9,6 +9,7 @@ USER root
 
 # Install Python 3 packages
 RUN conda install --yes \
+    'altair' \
     'quandl' \
     'vega_datasets'
 
