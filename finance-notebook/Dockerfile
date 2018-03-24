@@ -3,7 +3,7 @@
 
 FROM jupyter/scipy-notebook
 
-MAINTAINER adebar <https://github.com/adebar>
+MAINTAINER markusschanta <https://github.com/markusschanta>
 
 USER root
 
