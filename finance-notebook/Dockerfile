@@ -9,7 +9,8 @@ USER root
 
 # Install Python 3 packages
 RUN conda install --yes \
-    'quandl'
+    'quandl' \
+    'vega_datasets'
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER

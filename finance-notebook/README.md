@@ -7,6 +7,7 @@
 * Fully-functional Jupyter Notebook (incl. JupyterLab)
 * Preinstalled financial computing packages
   * quandl
+  * vega_datasets
 * All the features of the [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) images
 
 ## Basic Use
