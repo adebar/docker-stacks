@@ -8,6 +8,7 @@
 * Preinstalled financial computing packages
   * quandl
   * vega_datasets
+* Preinstalled [markusschanta/dotfiles](https://github.com/markusschanta/dotfiles)
 * All the features of the [jupyter/docker-stacks](https://github.com/jupyter/docker-stacks) images
 
 ## Basic Use
