@@ -94,6 +94,10 @@ retry/%:
 		sleep $$((i * 60)) ; \
 	done ; exit 1
 
+rootbash/%: PORT?=8888
+rootbash/%: ## run a foreground container as root for a stack
+	docker run -it --rm --user root -e GRANT_SUDO=yes -p $(PORT):8888 $(DARGS) $(OWNER)/$(notdir $@) bash
+
 tag/%: ##tag the latest stack image with the HEAD git SHA
 	docker tag -f $(OWNER)/$(notdir $@):latest $(OWNER)/$(notdir $@):$(GIT_MASTER_HEAD_SHA)
 
