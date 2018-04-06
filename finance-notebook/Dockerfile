@@ -14,8 +14,11 @@ RUN conda install --yes \
     'vega_datasets'
 
 # Set up markusschanta/dotfiles
-RUN rm .bashrc .profile
-RUN git clone https://github.com/markusschanta/dotfiles.git && cd dotfiles && ./install; exit 0
+RUN rm .bashrc .profile && \
+    cd /usr/local/src && \
+    git clone https://github.com/markusschanta/dotfiles.git && \
+    cd dotfiles && \
+    ./install; exit 0
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
