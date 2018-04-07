@@ -7,6 +7,13 @@ MAINTAINER markusschanta <https://github.com/markusschanta>
 
 USER root
 
+# Install packages
+RUN apt-get update && apt-get install -y \
+    imagemagick \
+    less \
+    ssh \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install Python 3 packages
 RUN conda install --yes \
     'altair' \
