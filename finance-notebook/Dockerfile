@@ -18,7 +18,10 @@ RUN apt-get update && apt-get install -y \
 RUN conda install --yes \
     'altair' \
     'quandl' \
+    'scrapy' \
     'vega_datasets'
+
+RUN pip install shub
 
 # Set up markusschanta/dotfiles
 RUN rm .bashrc .profile && \
