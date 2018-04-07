@@ -40,3 +40,17 @@ $ make build/finance-notebook
 ```
 $ make push/finance-notebook
 ```
+
+### Steps to reclaim disk space
+
+```
+sudo service docker stop
+cd /var/lib/docker
+sudo ls -l
+sudo ncdu
+df
+sudo rm -rf overlay2
+sudo rm -rf image
+df
+sudo service docker start
+```
