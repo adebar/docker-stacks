@@ -20,7 +20,9 @@ RUN apt-get update && apt-get install -y \
 # Install Python 3 packages
 RUN conda install --yes \
     'altair' \
+    'boto3' \
     'quandl' \
+    'pandas-profiling' \
     'scrapy' \
     'vega_datasets'
 
