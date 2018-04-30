@@ -7,6 +7,9 @@ MAINTAINER markusschanta <https://github.com/markusschanta>
 
 USER root
 
+# Disable git's "push.default unset" warning
+RUN git config --global push.default simple
+
 # Install packages
 RUN apt-get update && apt-get install -y \
     imagemagick \
