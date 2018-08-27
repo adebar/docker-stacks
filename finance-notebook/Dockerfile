@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y \
 # Install Python 3 packages that are not in conda
 RUN pip install \
     shub \
+    vdom
+
 # Install Python 3 packages
 RUN conda install --yes \
     'altair' \
