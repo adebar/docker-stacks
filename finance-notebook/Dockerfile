@@ -17,6 +17,9 @@ RUN apt-get update && apt-get install -y \
     ssh \
     && rm -rf /var/lib/apt/lists/*
 
+# Install Python 3 packages that are not in conda
+RUN pip install \
+    shub \
 # Install Python 3 packages
 RUN conda install --yes \
     'altair' \
@@ -26,7 +29,6 @@ RUN conda install --yes \
     'scrapy' \
     'vega_datasets'
 
-RUN pip install shub
 
 # Set up markusschanta/dotfiles
 RUN rm .bashrc .profile && \
