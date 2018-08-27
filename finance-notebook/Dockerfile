@@ -17,6 +17,18 @@ RUN apt-get update && apt-get install -y \
     ssh \
     && rm -rf /var/lib/apt/lists/*
 
+# Install JupyterLab extensions
+RUN jupyter labextension install @jupyterlab/celltags
+RUN jupyter labextension install @jupyterlab/git
+# RUN jupyter labextension install @jupyterlab/shortcutui
+RUN jupyter labextension install @jupyterlab/statusbar
+RUN jupyter labextension install @jupyterlab/toc
+RUN jupyter labextension install @jupyterlab/vega3-extension
+# Install JupyterLab Voyager extension
+# This extension can be a bit flakey with the requirements, comment out if this
+# step fails
+# RUN jupyter labextension install jupyterlab_voyager --debug
+
 # Install Python 3 packages that are not in conda
 RUN pip install \
     shub \
@@ -30,7 +42,6 @@ RUN conda install --yes \
     'pandas-profiling' \
     'scrapy' \
     'vega_datasets'
-
 
 # Set up markusschanta/dotfiles
 RUN rm .bashrc .profile && \
